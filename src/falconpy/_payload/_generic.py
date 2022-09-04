@@ -59,7 +59,7 @@ def generic_payload_list(submitted_keywords: dict,
     submitted_values = submitted_keywords.get(payload_value, None)
     if submitted_values:
         if not isinstance(submitted_values, list):
-            submitted_values = list(submitted_values).split(",")
+            submitted_values = str(submitted_values).split(",")
         returned_payload[payload_value] = submitted_values
     else:
         if submitted_arguments:
